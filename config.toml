@@ -21,4 +21,4 @@ name = "Tags"
 url = "/tags/"
 weight = 3
 
-enableEmoji = "true"
+enableEmoji = true
