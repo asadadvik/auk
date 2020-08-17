@@ -1,0 +1,45 @@
+{{ define "main" }}
+{{ $dateTime := .PublishDate.Format "2006-01-02" }} 
+{{ $dateFormat := .Site.Params.dateFormat | default "Jan 2" }}
+
+<div id="single-post">
+
+  <!-- Title -->
+  <h1 id="single-post-title">{{ .Title }}</h1>
+
+  <!-- Tags -->
+  <div id="single-tags" >
+    {{ with .Params.tags }}
+    {{ range . }}
+    {{ $href := print (absURL "tags/") (urlize .) }}
+    <a id="tag-button"  href="{{ $href }}">{{ . }}</a>
+     
+    {{ end }}
+    {{ end }}
+
+  </div>
+ 
+<div id="single-meta">
+  
+  <!-- Author -->
+  <span id="single-author">
+    {{.Params.author}}
+  </span>
+
+  <!-- Date -->
+  <span id="single-date"
+    ><time datetime="{{ $dateTime }}"
+      >{{ .PublishDate.Format $dateFormat }}・</time
+    ></span
+  >
+
+  <!-- Read Time -->
+  <span id="single-read-time">{{.ReadingTime}} min read</span>
+
+</div> 
+
+  <br/>
+
+  {{ .Content }}
+</div>
+{{ end }}

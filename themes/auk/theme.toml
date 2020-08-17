@@ -1,0 +1,10 @@
+name = "Auk"
+description = "A theme inspired from DEV.TO"
+features = []
+homepage = "http://example.com/"
+license = "MIT"
+min_version = "0.41.0"
+
+[author]
+homepage = "https://advik.ga"
+name = "Asad Advik"
